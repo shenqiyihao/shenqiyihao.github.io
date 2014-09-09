@@ -1,0 +1,57 @@
+//$slice-sprite-base-class: ".icons";
+// defult is <folder name>-sprite
+
+//Tells Compass to define one additional class with the sprite as its
+//background-image. Use as $<folder name>-sprite-base-class.
+
+$slice-layout: smart;
+//$sprite-layout: This tells Compass how we want our
+//images laid out within the sprite.
+//The options are vertical, horizontal, diagonal and smart.
+//Smart means that it packs all the images in together as tight as possible
+//so that the footprint of the final sprite is as small as possible.
+//Use as $<folder name>-layout.
+
+$slice-sprite-dimensions: true;
+//Tells Compass to include the dimensions of each individual
+//image in the CSS along with its coordinates.
+//Use as $<folder name>-image-dimensions.
+
+//Note that there are many other customizations you can set for your sprite,
+//but these 3 did the job for us.
+//For the full list of options, check out the documentation at
+//http://compass-style.org/help/tutorials/spriting/customization-options/.
+
+//@import "slice/*.png";
+//@include all-slice-sprites;
+
+//.btn-add {
+//    background-image: image-url("slice/btn-add.png");
+//}
+
+//The final step is to @import the Compass sprite module and all of
+//the images we want compiled into a sprite. Then, by calling the magic
+//function all-sprite-sprites (all-<folder name>-sprites),
+//Compass will dig into our sprite folder, stitch everything together,
+//drop a CSS file into our css folder and a complete sprite
+//into our images folder
+
+//Adding hovers to your sprites is very easy,
+//just put "_hover" (or "_active", or "_target") in the image
+//filename and let compass generate the sprite map for you =D.
+//remove auto hover generate just add $disable-magic-sprite-selectors:true;
+
+[class^="icon-"] {
+    display: inline-block;
+    background-repeat: no-repeat;
+}
+
+@import "blueprint/buttons";
+[class^="btn-"] {
+  @include button-button;
+}
+a.btn {
+    @include anchor-button;
+}
+
+

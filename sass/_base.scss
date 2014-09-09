@@ -1,0 +1,44 @@
+body {
+    font-family: $china_usually;
+    height: 800px;
+}
+
+header {
+    text-align: center;
+    margin-top: 30px;
+    height: 72px;
+}
+
+.columns {
+    @include container;
+    height: 48px;
+    .column5 {
+        @include column(5);
+    }
+    .column2-last {
+        @include column(2, true);
+    }
+    .column2 {
+        @include column(2);
+    }
+    .column3 {
+        @include column(3);
+    }
+    .column7 {
+        @include column(7);
+    }
+}
+
+input[type="text"] {
+    width: 200px;
+}
+
+#footer {
+    text-align: center;
+}
+footer {
+    text-align: center;
+    font-family: $helvetica;
+}
+
+@include sticky-footer(54px, "body", "#footer", "footer");

@@ -66,7 +66,7 @@
     <h1>
         神奇一号采暖炉录入单
         <small>蠡县古灵山<abbr title="神奇炉业创办于2008年，具有强大的技术实力，立志于为华夏大地送上温暖。">神奇炉业</abbr></small>
-        <button class="btn btn-primary pull-right">前往打印单据</button>
+        <a class="btn btn-info pull-right" href="print.html">前往打印单据</a>
     </h1>
 </header>
 <article>
@@ -92,41 +92,53 @@
             </table>
         </div>
 
+
+
         <div class="container">
-            <div class="row">
-                <div class="col-xs-4">品类</div>
-                <div class="col-xs-4">型号</div>
-                <div class="col-xs-4">单价</div>
-            </div>
-            <div class="row">
-                <div class="col-xs-4">
-                    <input type="text" placeholder="输入品种名，比如水套"/>
-                </div>
-                <div class="col-xs-4">
-                    <input type="text" placeholder="输入型号，比如"/>
-                </div>
-                <div class="col-xs-4">
-                    <input type="text" placeholder="输入单价，直接数字，不要单位"/>
-                </div>
-            </div>
-        </div>
 
+            <p class="lead text-left">如果有需要新添加的型号，产品，单价，点击新增按钮添加</p>
+            <button class="btn btn-info btn-block" data-add-new-category="true">新增</button>
 
-        <div class="row">
-            <div class="col-xs-12">
-                <a href="###" class="btn" data-save="save">存储</a>
-            </div>
         </div>
 
 
         <div class="row" id="footer">
             <p class="text-center">
-                <a class="btn btn-block" href="print.html">前往打印单据</a>
+                <a class="btn btn-info" href="print.html">前往打印单据</a>
             </p>
         </div>
     </div>
 
 </article>
+
+<div class="modal fade" id="modal-add-new-category">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">新增品类</h4>
+            </div>
+            <div class="modal-body">
+                <form class="text-left" role="form">
+                    <div class="form-group">
+                        <label for="category-form-control">品类</label>
+                        <input class="form-control" id="category-form-control" type="text" placeholder="神奇(不填默认神奇系列)"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="model-form-control">型号</label>
+                        <input class="form-control" id="model-form-control" type="text" placeholder="型号为必填项"/>
+                    </div>
+                    <div class="form-group has-success has-feedback">
+                        <label for="price-form-control">单价</label>
+                        <input class="form-control" id="price-form-control" type="text" placeholder="单价为必填项，以元为单位"/>
+                        <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+                    </div>
+                    <button class="btn btn-success btn-block" type="submit" data-save="true">提交</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
 <footer class="container text-center">
     <blockquote>

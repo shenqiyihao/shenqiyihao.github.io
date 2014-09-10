@@ -10,6 +10,8 @@
     Parse.initialize("eW2cokjiyGm0OsMW3L6bjxzi05JzAR0ih1KwxTob",
             "Udihr8tEzPT4rGoKP97MDydY21fk6tZ7L7OCbVz0");
 
+    var allGoodsTableArray = [];    // 用来渲染table商品信息表格的数据
+
     /**
      * 拉取已经存储的神奇一号炉子型号等数据来渲染表格
      */
@@ -28,8 +30,8 @@
             nameTypeRPrice = {
 //                "name-type" : "price"
             },
-            allGoods = [],
-            allGoodsTableArray = [];    // 用来渲染table商品信息表格的数据
+            allGoods = [];
+
         query.exists("goods");
         query.find({
             success: function (results) {
@@ -89,7 +91,28 @@
     function save(obj, data, callback) {
         obj.save(data, {
             success: function (obj) {
-                alert("存储数据成功，可前往打印单据");
+
+                //
+                var attributes = obj.attributes,
+                    goods = [];
+
+                if (attributes) {
+                    goods = attributes.goods || [];
+                }
+
+                for (var i = 0, j = goods.length; i < j; i++) {
+                    var goods = goods[i],
+                        goodsName = goods["name"],
+                        goodsType = goods["type"],
+                        goodsSalePrice = goods["salePrice"];
+
+                    allGoodsTableArray.unshift([goodsName, goodsType, goodsSalePrice]);
+                }
+
+                var dataTable = $('.data-table').DataTable();
+                dataTable.clear();
+                dataTable.rows.add(allGoodsTableArray).draw();
+
                 callback && callback(obj);
             },
             error : function (obj) {
@@ -100,36 +123,34 @@
     }
 
     function handleSaveEvent(e) {
-        var typeInputs = $(".column2 > input"),
-                salesInpts = $(".column2-last > input"),
+        var typeInputs = $("#model-form-control"),
+                salesInpts = $("#price-form-control"),
                 saveArray = [];
 
         // 首先从页面中获取品类和单价的键值
-        $(".column3 > input").each(function(index, element) {
+        $("#category-form-control").each(function(index, element) {
             var $this = $(this),
-                    nameValue = $this.val(),
-                    type = "",
-                    price = "";
+                nameValue = $this.val(),
+                type = "",
+                price = "";
 
-            if (nameValue !== "") {
+            nameValue = nameValue || '神奇';
 
-                // 认为取到了品类的名字
-                type = typeInputs[index].value;
+            type = typeInputs[index].value;
 
-                if (type !== "") {
+            if (type !== "") {
 
-                    // 既有品类又有型号，获取价格
-                    price = salesInpts[index].value;
+                // 既有品类又有型号，获取价格
+                price = salesInpts[index].value;
 
-                    if (price !== "") {
+                if (price !== "") {
 
-                        // 认为品类，型号，价格全齐了
-                        saveArray.push({
-                            "name" : nameValue,
-                            "type" : type,
-                            "salePrice" : price
-                        });
-                    }
+                    // 认为品类，型号，价格全齐了
+                    saveArray.push({
+                        "name" : nameValue,
+                        "type" : type,
+                        "salePrice" : price
+                    });
                 }
             }
         });
@@ -140,12 +161,15 @@
 
         if (saveArray[0] === undefined) {
             alert("请先输入数据");
+            return false;
         } else {
             save(GoodsObj, {
                 goods : saveArray
             });
         }
 
+        // 隐藏modal窗口
+        $('#modal-add-new-category').modal('hide');
 
         e.preventDefault();
         e.stopPropagation();
@@ -184,6 +208,11 @@
         },
         initEventHandler: function () {
             $(document).on("click", "[data-save]", handleSaveEvent);
+
+            $(document).on('click', '[data-add-new-category]', function (e) {
+                // 增加新的品类
+                $('#modal-add-new-category').modal({});
+            });
         }
     };
 

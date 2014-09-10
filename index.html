@@ -2,83 +2,137 @@
 <html lang="zh-cn">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>神奇炉业单据录入</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="./css/main.css">
+    <link href="css/matrix-style.css" rel="stylesheet">
+
+    <style>
+
+        body {
+            font-family: 'microsoft yahei';
+        }
+
+        .shenqiyihao-typein-sec {
+
+            padding-top: 50px;
+
+            color: #cdbfe3;
+            text-align: center;
+
+            background-color: #6f5499;
+            background-image: -webkit-linear-gradient(top,#563d7c 0,#6f5499 100%);
+            background-image: linear-gradient(to bottom,#563d7c 0,#6f5499 100%);
+            background-repeat: repeat-x;
+        }
+
+        .bs-docs-booticon {
+            margin: 0 auto 30px;
+        }
+
+        .bs-docs-booticon-outline {
+            background-color: transparent;
+            border: 1px solid #cdbfe3;
+        }
+
+        .bs-docs-booticon-lg {
+            width: 400px;
+            height: 144px;
+            font-size: 108px;
+            line-height: 140px;
+        }
+
+        .bs-docs-booticon {
+            display: block;
+            font-weight: 500;
+            color: #fff;
+            background-color: #563d7c;
+            border-radius: 15%;
+            cursor: default;
+            text-align: center;
+        }
+
+        .data-table {
+            background-color: #f9f9f9;
+        }
+    </style>
+
 </head>
 <body>
-<header>
+<header class="container text-center">
     <h1>
         神奇一号采暖炉录入单
+        <small>蠡县古灵山<abbr title="神奇炉业创办于2008年，具有强大的技术实力，立志于为华夏大地送上温暖。">神奇炉业</abbr></small>
+        <button class="btn btn-primary pull-right">前往打印单据</button>
     </h1>
 </header>
 <article>
-    <div class="columns">
-        <div class="column3">品类</div>
-        <div class="column2">型号</div>
-        <div class="column2-last">单价</div>
-    </div>
-    <div class="columns">
-        <div class="column3">
-            <input type="text" placeholder="输入品种名，比如水套"/>
+    <div class="container-fluid shenqiyihao-typein-sec">
+
+        <div class="container">
+            <span class="bs-docs-booticon bs-docs-booticon-lg bs-docs-booticon-outline">SQLY</span>
+
+            <p class="lead">神奇炉业创办于2008年，具有强大的技术实力，立志于为华夏大地送上温暖。</p>
+
+            <p class="lead">表格中是已经录入的神奇一号的型号单，点击表头可以排序。</p>
+
+            <table class="table table-bordered table-striped table-hover data-table">
+                <thead>
+                    <tr>
+                        <th>品类</th>
+                        <th>型号</th>
+                        <th>单价(￥)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
         </div>
-        <div class="column2">
-            <input type="text" placeholder="输入型号，比如"/>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-4">品类</div>
+                <div class="col-xs-4">型号</div>
+                <div class="col-xs-4">单价</div>
+            </div>
+            <div class="row">
+                <div class="col-xs-4">
+                    <input type="text" placeholder="输入品种名，比如水套"/>
+                </div>
+                <div class="col-xs-4">
+                    <input type="text" placeholder="输入型号，比如"/>
+                </div>
+                <div class="col-xs-4">
+                    <input type="text" placeholder="输入单价，直接数字，不要单位"/>
+                </div>
+            </div>
         </div>
-        <div class="column2-last">
-            <input type="text" placeholder="输入单价，直接数字，不要单位"/>
+
+
+        <div class="row">
+            <div class="col-xs-12">
+                <a href="###" class="btn" data-save="save">存储</a>
+            </div>
         </div>
-    </div>
-    <div class="columns">
-        <div class="column3">
-            <input type="text" placeholder="输入品种名，比如水套"/>
-        </div>
-        <div class="column2">
-            <input type="text" placeholder="输入型号，比如"/>
-        </div>
-        <div class="column2-last">
-            <input type="text" placeholder="输入单价，直接数字，不要单位"/>
-        </div>
-    </div>
-    <div class="columns">
-        <div class="column3">
-            <input type="text" placeholder="输入品种名，比如水套"/>
-        </div>
-        <div class="column2">
-            <input type="text" placeholder="输入型号，比如"/>
-        </div>
-        <div class="column2-last">
-            <input type="text" placeholder="输入单价，直接数字，不要单位"/>
-        </div>
-    </div>
-    <div class="columns">
-        <div class="column3">
-            <input type="text" placeholder="输入品种名，比如水套"/>
-        </div>
-        <div class="column2">
-            <input type="text" placeholder="输入型号，比如"/>
-        </div>
-        <div class="column2-last">
-            <input type="text" placeholder="输入单价，直接数字，不要单位"/>
-        </div>
-    </div>
-    <div class="columns">
-        <div class="column7">
-            <a href="###" class="btn" data-save="save">存储</a>
+
+
+        <div class="row" id="footer">
+            <p class="text-center">
+                <a class="btn btn-block" href="print.html">前往打印单据</a>
+            </p>
         </div>
     </div>
 
-
-    <div id="footer">
-        <p><a href="print.html">前往打印单据</a></p>
-    </div>
 </article>
 
-<footer>
-    Copyright ©2008 - 2014 神奇炉业
+<footer class="container text-center">
+    <blockquote>
+        <p>Copyright ©2008 - 2014 神奇炉业</p>
+        <footer>董事长：刘凯微，总经理：刘凯亮</footer>
+    </blockquote>
 </footer>
 
 <script type="text/javascript"
@@ -86,8 +140,10 @@
 
 <script src="js/bootstrap.min.js"></script>
 
-<script type="text/javascript"
-        src="js/parse-1.2.7.min.js"></script>
-<script src="./js/main.min.js"></script>
+<script type="text/javascript" src="js/parse-1.2.7.min.js"></script>
+
+<script type="text/javascript" src="//cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
+
+<script src="./js/main.js"></script>
 </body>
 </html>

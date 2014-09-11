@@ -7,35 +7,58 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <style>
-
+        body {
+            font-family: 'microsoft yahei';
+        }
     </style>
 
 </head>
 <body class="body2">
-    <header>
-        神奇炉业打印单
+    <header class="container text-center">
+        <h1>
+            神奇一号采暖炉打印单
+            <small>蠡县古灵山<abbr title="神奇炉业创办于2008年，具有强大的技术实力，立志于为华夏大地送上温暖。">神奇炉业</abbr></small>
+            <a class="btn btn-info pull-right" href="index.html">返回录入单</a>
+        </h1>
     </header>
-    <article id="original-article">
-        <div id="saleHeader">
-            <p class="saleHeader-head-p">神奇1号采暖炉销售单</p>
-            <p class="saleHeader-body-p">
-                <span class="first-span">
-                    开票日期：<input class="generate-date" type="text"/>
-                </span>
-                <span class="second-span">
-                    经手人：<input class="handle-person" type="text"/>
-                </span>
-            </p>
-            <p class="saleHeader-body-p">
-                <span class="first-span">
-                    客户：<input class="consumer-person" type="text"/>
-                </span>
-                <span class="second-span">
-                    客户电话：<input class="consumer-person-tel" type="text"/>
-                </span>
-            </p>
+    <article class="container-fluid" id="original-article">
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-2">
+                    <dl class="dl-horizontal">
+                        <dt>录单日期:</dt>
+                        <dd>2014/09/11</dd>
+                        <dt>经办人员:</dt>
+                        <dd>刘凯亮</dd>
+                        <dt>购方人员:</dt>
+                        <dd>李星海</dd>
+                    </dl>
+                </div>
+                <div class="col-xs-5">
+                    <dl class="dl-horizontal">
+                        <dt>单据编号:</dt>
+                        <dd>2014-09-11-00301</dd>
+                        <dt>购买单位:</dt>
+                        <dd>徐水华星科技李星海</dd>
+                        <dt>联系地址:</dt>
+                        <dd>徐水市区大街136号</dd>
+                    </dl>
+                </div>
+                <div class="col-xs-5">
+                    <dl class="dl-horizontal">
+                        <dt>发货仓库:</dt>
+                        <dd>蠡县古灵山工业园一号仓</dd>
+                        <dt>联系购方:</dt>
+                        <dd>********</dd>
+                        <dt>售后咨询:</dt>
+                        <dd>13833220084</dd>
+                    </dl>
+                </div>
+            </div>
         </div>
-        <div class="saleBody">
+
+        <div class="container-fluid">
             <table>
                 <tr class="table-header">
                     <th>商品名称</th>
@@ -152,8 +175,11 @@
         </div>
         </article>
     </div>
-    <footer>
-        Copyright ©2008 - 2014 神奇炉业
+    <footer class="container text-center">
+        <blockquote>
+            <p>Copyright ©2008 - 2014 神奇炉业</p>
+            <footer>董事长：刘凯微，总经理：刘凯亮</footer>
+        </blockquote>
     </footer>
 
 <script type="text/javascript"
@@ -161,8 +187,10 @@
 
 <script src="js/bootstrap.min.js"></script>
 
-<script type="text/javascript"
-        src="js/parse-1.2.7.min.js"></script>
-<script src="js/print.min.js"></script>
+<script type="text/javascript" src="js/parse-1.2.7.min.js"></script>
+
+<script type="text/javascript" src="js/print-this-plugin.js"></script>
+
+<script src="js/print.js"></script>
 </body>
 </html>

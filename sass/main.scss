@@ -1,16 +1,1 @@
 
-// 这里注意了，sass是支持双斜线这种注释方式的，这种注释的含义
-// 就是注释内容只出现在sass文件中，不会到编译的对应的css文件中。
-
-@import "compass/reset";   // reset stylesheet
-@import "compass/layout/sticky-footer"; // 用来修改footer的样式
-
-$blueprint_grid_columns:7;
-$blueprint_grid_width: 100px;
-@import "blueprint"; // 引入
-@import "font_family";     // 字体变量
-@import "base"; // 全局基本设置 base 样式
-@import "border"; // 设置border的样式
-@import "icon"; // icon 图标
-//@import "checkbox"; // 用来修改checkbox的默认样式
-@import "index2"; // 打印页面的样式

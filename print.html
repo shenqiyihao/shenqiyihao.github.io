@@ -6,186 +6,137 @@
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <style>
-        body {
-            font-family: 'microsoft yahei';
-        }
-    </style>
+    <link href="css/print-normal.css" rel="stylesheet">
+    <link href="css/print-print.css" rel="stylesheet" media="print">
 
 </head>
-<body class="body2">
-    <header class="container text-center">
-        <h1>
-            神奇一号采暖炉打印单
-            <small>蠡县古灵山<abbr title="神奇炉业创办于2008年，具有强大的技术实力，立志于为华夏大地送上温暖。">神奇炉业</abbr></small>
-            <a class="btn btn-info pull-right" href="index.html">返回录入单</a>
-        </h1>
-    </header>
-    <article class="container-fluid" id="original-article">
+<body>
+    <article id="original-total-page">
+        <header class="container text-center">
+            <h1>
+                神奇一号采暖炉打印单
+                <small>蠡县古灵山<abbr title="神奇炉业创办于2008年，具有强大的技术实力，立志于为华夏大地送上温暖。">神奇炉业</abbr></small>
+                <a class="btn btn-info pull-right" href="index.html">返回录入单</a>
+            </h1>
+        </header>
+        <article class="container-fluid" id="original-article">
 
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-xs-2">
-                    <dl class="dl-horizontal">
-                        <dt>录单日期:</dt>
-                        <dd>2014/09/11</dd>
-                        <dt>经办人员:</dt>
-                        <dd>刘凯亮</dd>
-                        <dt>购方人员:</dt>
-                        <dd>李星海</dd>
-                    </dl>
-                </div>
-                <div class="col-xs-5">
-                    <dl class="dl-horizontal">
-                        <dt>单据编号:</dt>
-                        <dd>2014-09-11-00301</dd>
-                        <dt>购买单位:</dt>
-                        <dd>徐水华星科技李星海</dd>
-                        <dt>联系地址:</dt>
-                        <dd>徐水市区大街136号</dd>
-                    </dl>
-                </div>
-                <div class="col-xs-5">
-                    <dl class="dl-horizontal">
-                        <dt>发货仓库:</dt>
-                        <dd>蠡县古灵山工业园一号仓</dd>
-                        <dt>联系购方:</dt>
-                        <dd>********</dd>
-                        <dt>售后咨询:</dt>
-                        <dd>13833220084</dd>
-                    </dl>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-4">
+                        <ul class="list-unstyled">
+                            <li id="typed-day">录单日期: 2014/09/11</li>
+                            <li id="typed-people">经办人员: <input type="text" value="刘凯亮"/></li>
+                            <li id="purchase-people">购方人员: <input type="text" value="某某"/></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-4">
+                        <ul class="list-unstyled">
+                            <li id="typed-num">单据编号: 2014-09-11-00301</li>
+                            <li id="purchase-unit">购买单位: <input type="text"/></li>
+                            <li id="purchase-address">联系地址: <input type="text"/></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-4">
+                        <ul class="list-unstyled">
+                            <li>发货仓库: 蠡县古灵山工业园一仓</li>
+                            <li id="purchase-phone">联系购方: <input type="text"/></li>
+                            <li>售后咨询: 13833220084</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="container-fluid">
-            <table>
-                <tr class="table-header">
-                    <th>商品名称</th>
-                    <th>型号</th>
-                    <th>数量</th>
-                    <th>单价</th>
-                    <th>金额</th>
-                    <th>备注</th>
-                </tr>
-                <tr class="table-footer">
-                    <td colspan="6" class="td-last">
-                        <a class="btn" href="###" data-add-row="add-row">添加一
-                            行</a>
-                    </td>
-                </tr>
-            </table>
-        </div>
-        <div id="saleFooter">
-            <div class="saleFooter-first-div">
-            <!-- <p class="first-p">
-                <span>收款账户:</span>
-                <span><input class="accept-account" type="text"/></span>
-            </p> -->
-            <p class="second-p">
-                <span>总计金额:</span>
-                <span><input id="totalTotalPrice" class="totalTotalPrice"
-                             type="text"
-                    readonly/>元</span>
-            </p>
+            <div class="container-fluid">
+                <div class="row">
+                    <table class="table table-triped table-bordered table-hover">
+                        <thead>
+                        <tr>
+                            <th>商品名称</th>
+                            <th>型号</th>
+                            <th>数量</th>
+                            <th>单价</th>
+                            <th>金额</th>
+                            <th>备注</th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        <tr class="table-footer">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>金额总计：</td>
+                            <td id="total-all-price"></td>
+                            <td></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="row text-center">
+                    <a class="btn btn-info btn-add-new-category" href="###" data-add-new-category="true">新增</a>
+                </div>
             </div>
-            <p class="saleFooter-address">地址： 河北保定蠡县万安镇古灵山工业区</p>
-            <div>
-                <p class="first-p">
-                    <span>销售电话：</span>
-                    <span>13833220084 刘凯亮</span>
-                </p>
-                <p class="second-p">
-                    <span>总经理：</span>
-                    <span>13722222258 刘凯微</span>
-                </p>
+
+            <div class="container-fluid">
+
+                <div class="row col-xs-11">
+                    地址： 河北保定蠡县万安镇古灵山工业区
+                </div>
+
+                <div class="row">
+                    <p class="col-xs-6">
+                        <span>销售电话：</span>
+                        <span>13833220084 刘凯亮</span>
+                    </p>
+                    <p class="col-xs-6">
+                        <span>总经理：</span>
+                        <span>13722222258 刘凯微</span>
+                    </p>
+                </div>
+                <div class="row">
+                    <span class="col-xs-4">农行: 622845 1268014597577</span>
+                    <span class="col-xs-4">建行: 4340 6201 4024 6865</span>
+                    <span class="col-xs-4">工行: 622202 0409030686714</span>
+                </div>
+                <div class="row">
+                    <span class="col-xs-4">邮政: 6217991340001161293</span>
+                    <span class="col-xs-8">信用社: 6210 2100 5130 1286 413</span>
+                </div>
+
             </div>
-            <div class="saleFooter-bank">
-                <span>农行: 622845 1268014597577</span><br/>
-                <span>建行: 4340 6201 4024 6865</span><br/>
-                <span>信用社: 6210 2100 5130 1286 413</span><br/>
-                <span>邮政: 6217991340001161293</span><br/>
-                <span>工行: 622202 0409030686714</span><br/>
+
+            <div class="container-fluid">
+                <a class="btn btn-info btn-block btn-generate-print" href="###" data-generate-print="true">生成打印单</a>
             </div>
-        </div>
-        <div id="footer">
-            <a class="btn" href="###" data-generate-print="generate-print">生成打印
-                单</a>
-        </div>
+        </article>
+
+        <footer class="container text-center">
+            <blockquote>
+                <p>Copyright ©2008 - 2014 神奇炉业</p>
+                <footer>董事长：刘凯微，总经理：刘凯亮</footer>
+            </blockquote>
+        </footer>
     </article>
 
 
-    <div id="print-article">
-        <article>
-        <div class="saleHeader">
-            <p class="saleHeader-head-p">神奇1号采暖炉销售单</p>
-            <p class="saleHeader-body-p">
-                <span class="first-span">
-                    开票日期：<span class="generate-date" type="text"></span>
-                </span>
-                <span class="second-span">
-                    经手人：<span class="handle-person" type="text"></span>
-                </span>
-            </p>
-            <p class="saleHeader-body-p">
-                <span class="first-span">
-                    客户：<span class="consumer-person" type="text"></span>
-                </span>
-                <span class="second-span">
-                    客户电话：<span class="consumer-person-tel" type="text"></span>
-                </span>
-            </p>
-        </div>
-        <div class="saleBody">
-            <table>
-            </table>
-        </div>
-        <div class="saleFooter">
-            <div class="saleFooter-first-div">
-                <p class="first-p">
-                    <span>收款账户:</span>
-                    <span><span class="accept-account"
-                                type="text"></span></span>
-                </p>
-                <p class="second-p">
-                    <span>总计金额:</span>
-                <span><span class="totalTotalPrice"
-                             type="text"
-                             ></span>元</span>
-                </p>
-            </div>
-            <p class="saleFooter-address">地址： 河北保定蠡县万安镇古灵山工业区</p>
-            <div>
-                <p class="first-p">
-                    <span>销售电话：</span>
-                    <span>13833220084 刘凯亮</span>
-                </p>
-                <p class="second-p">
-                    <span>总经理：</span>
-                    <span>13722222258 刘凯微</span>
-                </p>
-            </div>
-            <div class="saleFooter-bank">
-                <span>农行: 622845 1268014597577</span><br/>
-                <span>建行: 4340 6201 4024 6865</span><br/>
-                <span>信用社: 6210 2100 5130 1286 413</span><br/>
-                <span>邮政: 6217991340001161293</span><br/>
-                <span>工行: 622202 0409030686714</span><br/>
-            </div>
-        </div>
-        </article>
-    </div>
-    <footer class="container text-center">
-        <blockquote>
-            <p>Copyright ©2008 - 2014 神奇炉业</p>
-            <footer>董事长：刘凯微，总经理：刘凯亮</footer>
-        </blockquote>
-    </footer>
+    <article id="print-article">
+        <header class="container text-center">
+            <h3>神奇一号采暖炉销售单</h3>
+        </header>
+
+
+        <!-- 生成打印单的按钮不要  新增的按钮不要 header内内容修改 -->
+    </article>
+
 
 <script type="text/javascript"
         src="http://pub.idqqimg.com/qqfind/js/jquery-2.0.0.min.js"></script>
 
 <script src="js/bootstrap.min.js"></script>
+
+<script src="js/date.js"></script>
 
 <script type="text/javascript" src="js/parse-1.2.7.min.js"></script>
 

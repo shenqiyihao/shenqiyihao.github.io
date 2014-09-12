@@ -1,0 +1,18 @@
+body {
+    font-family: 'microsoft yahei';
+}
+
+/* 生成打印单的按钮 */
+.btn-generate-print {
+    margin-top: 30px;
+}
+
+/* 新增一行商品类别的按钮 */
+.btn-add-new-category {
+    margin-bottom: 30px;
+}
+
+#print-article {
+    display: none;
+}
+
